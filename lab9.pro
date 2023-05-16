@@ -52,7 +52,7 @@ female(basia).
 child(Dziecko, Dorosly) :- parent(Dorosly, Dziecko).
 mother(Matka, Dziecko) :- parent(Matka, Dziecko), female(Matka).
 sister(Sister1, Sister2) :- parent(Matka, Sister1), parent(Matka, Sister2).
-has_a_child(Dorosly) :- parent(Dorosly, Dziecko).
+has_a_child(Dorosly) :- parent(Dorosly, _).
 grandparent(Grandparent, Grandchild) :- parent(Grandparent, Child), parent(Child, Grandchild).
 predecessor(Predecessor, Human) :- 
     has_a_child(Predecessor),
