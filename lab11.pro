@@ -26,10 +26,9 @@ shift([H | T], L2) :-
     append(T, [H], L2).
 
 quadrat([], []).
-quadrat([X | T], Acc) :-
-    Xx is X * X,
-    quadrat(T, L),
-    append([Xx], L, Acc).
+quadrat([X | T], [SquaredHead | SquaredTail]) :-
+    SquaredHead is X * X,
+    quadrat(T, SquaredTail).
 
 combine([], [], []).
 combine([H1 | T1], [H2 | T2], Acc) :-
