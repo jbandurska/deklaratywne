@@ -14,13 +14,8 @@ search(node(_, L, R), X) :-
 
 ?- search(node(5, node(3, nil, nil), node(7, node(6, nil, nil), node(12, nil, nil))), 6).
 
+max(nil, 0).
 max(node(X, nil, nil), X).
-max(node(Root, Left, nil), Max) :-
-    max(Left, LeftMax),
-    Max is max(Root, LeftMax).
-max(node(Root, nil, Right), Max) :-
-    max(Right, RightMax),
-    Max is max(Root, RightMax).
 max(node(Root, Left, Right), Max) :-
     max(Left, LeftMax),
     max(Right, RightMax),
